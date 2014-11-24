@@ -1,8 +1,9 @@
 package di.tweeter.v3;
 
+import javax.enterprise.inject.Alternative;
 
-@SMS
-// @Alternative
+//@SMS
+@Alternative
 public class SmsMessanger implements Messanger
 {
 	@Override

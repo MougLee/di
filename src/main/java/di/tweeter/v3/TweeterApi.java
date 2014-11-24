@@ -4,29 +4,29 @@ import javax.inject.Inject;
 
 public class TweeterApi
 {
+	@Inject
+	private Messanger messanger;
+
+	// @SMS
 	// @Inject
-	// private Messanger messanger;
+	// private Messanger smsMessanger;
+	//
+	// @Rest
+	// @Inject
+	// private Messanger restMessanger;
 
-	@SMS
-	@Inject
-	private Messanger smsMessanger;
-
-	@Rest
-	@Inject
-	private Messanger restMessanger;
-
-	// public String postTweet(String user, String text)
+	public String postTweet(String user, String text)
+	{
+		return messanger.send(user + ": " + text);
+	}
+	//
+	// public String postTweetSMS(String user, String text)
 	// {
-	// return messanger.send(user + ": " + text);
+	// return smsMessanger.send(user + ": " + text);
 	// }
-
-	public String postTweetSMS(String user, String text)
-	{
-		return smsMessanger.send(user + ": " + text);
-	}
-
-	public String postTweetRest(String user, String text)
-	{
-		return restMessanger.send(user + ": " + text);
-	}
+	//
+	// public String postTweetRest(String user, String text)
+	// {
+	// return restMessanger.send(user + ": " + text);
+	// }
 }

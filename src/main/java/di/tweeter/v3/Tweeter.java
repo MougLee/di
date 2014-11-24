@@ -18,6 +18,9 @@ public class Tweeter
 
 	public String tweet(String tweet)
 	{
-		return api.postTweetRest(user, tweet);
+		return api.postTweet(user, tweet);
+
+		// return api.postTweetSMS(user, tweet);
+		// return api.postTweetRest(user, tweet);
 	}
 }
